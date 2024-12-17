@@ -29,10 +29,11 @@ public class User {
     String email;
 
     @Size(min = 10, message = "Password must be at least 10 characters.")
-    @Column(name = "phone", nullable = false, columnDefinition = "varchar(15)")
+    @Column(name = "phone", nullable = false, columnDefinition = "varchar(15)", unique = true)
     String phone;
 
     @Column(name = "full_name", columnDefinition = "nvarchar(512)", nullable = false)
+    @Size(min = 7, message = "Full name must be at least 7 characters.")
     String fullName;
 
     @Lob
