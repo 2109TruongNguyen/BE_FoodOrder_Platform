@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+@Entity
 @Table(name = "food")
 @Data
 @Builder
@@ -14,7 +15,8 @@ import lombok.experimental.FieldDefaults;
 public class Food {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int foodID;
+    @Column(name = "food_id")
+    int food_id;
 
     @Column(name = "foodName", nullable = false, length = 50, columnDefinition = "nvarchar(50)")
     @Size(min = 3, message = "Name must be at least 3 characters.")

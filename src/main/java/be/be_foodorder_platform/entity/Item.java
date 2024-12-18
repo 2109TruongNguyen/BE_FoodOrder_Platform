@@ -14,7 +14,8 @@ import lombok.experimental.FieldDefaults;
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int itemID;
+    @Column(name = "item_id")
+    int item_id;
 
     @Column(name = "itemQuantity")
     int itemQuantity;

@@ -1,13 +1,11 @@
 package be.be_foodorder_platform.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+@Entity
 @Data
 @Builder
 @NoArgsConstructor
@@ -16,7 +14,8 @@ import lombok.experimental.FieldDefaults;
 public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int recipeID;
+    @Column(name = "recipe_id")
+    int recipe_id;
 
     @Column
     int quantity;

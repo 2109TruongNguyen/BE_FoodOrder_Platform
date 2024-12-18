@@ -15,7 +15,8 @@ import jakarta.validation.constraints.Size;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    @Column(name = "user_id")
+    Long user_id;
 
     @Column(name = "user_name", nullable = false, unique = true)
     @Size(min = 3, message = "Username must be at least 3 characters.")

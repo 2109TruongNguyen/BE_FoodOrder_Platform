@@ -1,13 +1,11 @@
 package be.be_foodorder_platform.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import jakarta.persistence.GenerationType;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,7 +14,8 @@ import jakarta.persistence.GenerationType;
 public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int ingredientID;
+    @Column(name = "ingredient_id")
+    int ingredient_id;
 
     @Column(name = "ingredientName", nullable = false, columnDefinition = "nvarchar(50)")
     @Size(min = 1, message = "Ingredient name must be at least 1 characters.")

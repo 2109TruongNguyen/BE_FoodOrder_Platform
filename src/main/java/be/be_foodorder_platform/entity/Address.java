@@ -15,7 +15,8 @@ import lombok.experimental.FieldDefaults;
 public class Address {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    Long id;
+    @Column(name = "address_id")
+    Long address_id;
 
     @Column(name = "province", columnDefinition = "nvarchar(50)", nullable = false)
     @Size(min = 3, message = "Province must be at least 3 characters.")
