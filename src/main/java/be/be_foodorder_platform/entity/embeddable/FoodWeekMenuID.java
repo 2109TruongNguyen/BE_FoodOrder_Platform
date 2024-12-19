@@ -1,4 +1,4 @@
-package be.be_foodorder_platform.entity.embeddableID;
+package be.be_foodorder_platform.entity.embeddable;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
@@ -14,9 +14,9 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class FoodWeekMenuID implements Serializable {
-    @Column()
+    @Column(name = "food_id")
     Integer foodID;
 
-    @Column()
+    @Column(name = "weekMenu_id")
     Integer weekMenuID;
 }

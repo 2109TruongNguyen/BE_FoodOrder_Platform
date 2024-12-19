@@ -4,6 +4,8 @@ import be.be_foodorder_platform.entity.enums.StatusOrder;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -42,4 +44,7 @@ public class Order {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     User user;
+
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    Collection<Item> items;
 }

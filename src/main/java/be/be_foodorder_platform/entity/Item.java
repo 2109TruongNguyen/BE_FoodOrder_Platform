@@ -22,4 +22,12 @@ public class Item {
 
     @Column(name = "totalPrice")
     Double totalPrice;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id", referencedColumnName = "order_id")
+    Order order;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "food_id", referencedColumnName = "food_id")
+    Food food;
 }

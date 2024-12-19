@@ -18,7 +18,7 @@ public class PersonalFood {
     @Column(name = "personalFood_id")
     Integer personalFoodID;
 
-    @Column(name = "personalPlan_id", nullable = false, columnDefinition = "int")
+    @Column(name = "weekDay", nullable = false, columnDefinition = "int")
     Integer weekDay;
 
     @Column(name = "weekIndex", nullable = false, columnDefinition = "int")
@@ -27,4 +27,8 @@ public class PersonalFood {
     @Column(name = "meal", nullable = false, columnDefinition = "nvarchar(50)")
     @Enumerated(EnumType.STRING)
     Meal meal;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "food_id", referencedColumnName = "food_id")
+    Food food;
 }

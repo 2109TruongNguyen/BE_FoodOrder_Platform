@@ -5,6 +5,8 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Collection;
+
 @Entity
 @Data
 @Builder
@@ -28,4 +30,7 @@ public class PersonalPlan {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     User user;
+
+    @OneToMany(mappedBy = "personalPlan", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    Collection<PersonalWeek> personalWeeks;
 }

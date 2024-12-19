@@ -31,4 +31,9 @@ public class WeekMenu {
     @Column(name = "endDate", nullable = false, columnDefinition = "datetime")
     Date endDate;
 
+    @OneToMany(mappedBy = "weekMenu", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    Collection<PersonalWeek> personalWeeks;
+
+    @OneToMany(mappedBy = "weekMenu", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    Collection<FoodWeekMenu> foodWeekMenus;
 }
