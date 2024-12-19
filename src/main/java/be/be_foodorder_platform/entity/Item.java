@@ -15,11 +15,11 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "item_id")
-    int item_id;
+    Integer item_id;
 
     @Column(name = "itemQuantity")
-    int itemQuantity;
+    Integer itemQuantity;
 
     @Column(name = "totalPrice")
-    double totalPrice;
+    Double totalPrice;
 }

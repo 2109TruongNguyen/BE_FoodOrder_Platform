@@ -16,7 +16,7 @@ public class Food {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "food_id")
-    int food_id;
+    Integer food_id;
 
     @Column(name = "foodName", nullable = false, length = 50, columnDefinition = "nvarchar(50)")
     @Size(min = 3, message = "Name must be at least 3 characters.")
@@ -28,14 +28,14 @@ public class Food {
 
     @Size(min = 1, message = "Price must be at least 1.")
     @Column(name = "foodPrice")
-    double foodPrice;
+    Double foodPrice;
 
     @Lob
     @Column(name = "foodImageURL")
-    byte[] foodImageURL;
+    Byte[] foodImageURL;
 
     @Column(name = "foodQuantity")
-    int foodQuantity;
+    Integer foodQuantity;
 
     @Column(name = "foodOrigin", nullable = false, columnDefinition = "nvarchar(50)")
     @Size(min = 3, message = "Origin must be at least 3 characters.")

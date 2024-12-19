@@ -39,8 +39,8 @@ public class User {
 
     @Lob
     @Column(name = "avatar")
-    byte[] avatar;
+    Byte[] avatar;
 
     @Column(name = "status", nullable = false)
-    boolean isEnable;
+    Boolean isEnable;
 }

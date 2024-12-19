@@ -11,11 +11,12 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "ingredient")
 public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ingredient_id")
-    int ingredient_id;
+    Integer ingredient_id;
 
     @Column(name = "ingredientName", nullable = false, columnDefinition = "nvarchar(50)")
     @Size(min = 1, message = "Ingredient name must be at least 1 characters.")
@@ -29,5 +30,5 @@ public class Ingredient {
     String ingredientMeasure;
 
     @Column(name = "status", nullable = false)
-    boolean isEnable;
+    Boolean isEnable;
 }
