@@ -16,7 +16,7 @@ public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "recipe_id")
-    Integer recipe_id;
+    Integer recipeID;
 
     @Column
     Integer quantity;

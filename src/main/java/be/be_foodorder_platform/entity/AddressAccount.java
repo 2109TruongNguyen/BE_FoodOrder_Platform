@@ -16,7 +16,7 @@ public class AddressAccount {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "address_id")
-    Long address_id;
+    Long addressAccountID;
 
     @Column(name = "province", columnDefinition = "nvarchar(50)", nullable = false)
     @Size(min = 3, message = "Province must be at least 3 characters.")
@@ -33,4 +33,7 @@ public class AddressAccount {
     @Column(name = "homeNumber", columnDefinition = "nvarchar(50)", nullable = false)
     @Size(min = 3, message = "Home number must be at least 3 characters.")
     String homeNumber;
+
+    @OneToOne(mappedBy = "addressAccount")
+    User user;
 }

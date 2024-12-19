@@ -1,5 +1,6 @@
 package be.be_foodorder_platform.entity;
 
+import be.be_foodorder_platform.entity.enums.Meal;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -15,7 +16,7 @@ public class PersonalFood {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "personalFood_id")
-    Integer personalFood_id;
+    Integer personalFoodID;
 
     @Column(name = "personalPlan_id", nullable = false, columnDefinition = "int")
     Integer weekDay;

@@ -16,7 +16,7 @@ public class PersonalPlan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "personalPlan_id")
-    Integer personalPlan_id;
+    Integer peronsalPlanID;
 
     @Column(name = "weeklyNumber", nullable = false, columnDefinition = "int")
     Integer weeklyNumber;
@@ -24,4 +24,8 @@ public class PersonalPlan {
     @Column(name = "planName", nullable = false, columnDefinition = "nvarchar(50)")
     @Size(min = 1, message = "Plan name must be at least 1 characters.")
     String planName;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    User user;
 }

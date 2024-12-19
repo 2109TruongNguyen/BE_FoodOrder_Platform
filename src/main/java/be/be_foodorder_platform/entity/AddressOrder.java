@@ -15,7 +15,7 @@ public class AddressOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "addressOrder_id")
-    Integer addressOrder_id;
+    Integer addressOrderID;
 
     @Column(name = "province", columnDefinition = "nvarchar(50)", nullable = false)
     String province;
@@ -28,4 +28,7 @@ public class AddressOrder {
 
     @Column(name = "homeNumber", columnDefinition = "nvarchar(50)", nullable = false)
     String homeNumber;
+
+    @OneToOne(mappedBy = "addressOrder")
+    Order order;
 }

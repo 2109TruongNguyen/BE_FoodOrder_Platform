@@ -5,6 +5,10 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import jakarta.validation.constraints.Size;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -16,7 +20,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    Long user_id;
+    Long userID;
 
     @Column(name = "user_name", nullable = false, unique = true)
     @Size(min = 3, message = "Username must be at least 3 characters.")
@@ -43,4 +47,14 @@ public class User {
 
     @Column(name = "status", nullable = false)
     Boolean isEnable;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "address_id")
+    AddressAccount addressAccount;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    Collection<Order> orders;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    Collection<PersonalPlan> personalPlans;
 }

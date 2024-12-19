@@ -17,7 +17,7 @@ public class WeekMenu {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     @Column(name = "weekMenu_id")
-    Integer weekMenu_id;
+    Integer weekMenuID;
 
     @Column(name = "weekMenuName", columnDefinition = "nvarchar(50)", nullable = false)
     @Size(min = 3, message = "Week menu name must be at least 3 characters.")

@@ -16,7 +16,7 @@ public class Food {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "food_id")
-    Integer food_id;
+    Integer foodID;
 
     @Column(name = "foodName", nullable = false, length = 50, columnDefinition = "nvarchar(50)")
     @Size(min = 3, message = "Name must be at least 3 characters.")
@@ -44,4 +44,8 @@ public class Food {
     @Size(min = 10, message = "Recipe must be at least 10 characters.")
     @Column(name = "foodRecipe", nullable = false, columnDefinition = "nvarchar(512)")
     String foodRecipe;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", referencedColumnName = "category_id")
+    Category category;
 }
