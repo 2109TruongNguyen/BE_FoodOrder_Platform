@@ -4,8 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Data
@@ -24,9 +23,9 @@ public class WeekMenu {
     @Size(min = 3, message = "Week menu name must be at least 3 characters.")
     String weekMenuName;
 
-    @Column(name = "startDate", nullable = false)
-    LocalDate startDate;
+    @Column(name = "startDate", nullable = false, columnDefinition = "datetime")
+    Date startDate;
 
-    @Column(name = "endDate", nullable = false)
-    LocalDate endDate;
+    @Column(name = "endDate", nullable = false, columnDefinition = "datetime")
+    Date endDate;
 }

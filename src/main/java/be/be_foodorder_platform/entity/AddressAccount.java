@@ -11,8 +11,8 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "address")
-public class Address {
+@Table(name = "addressAccount")
+public class AddressAccount {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "address_id")
