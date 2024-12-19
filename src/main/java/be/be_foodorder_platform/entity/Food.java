@@ -5,6 +5,8 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Collection;
+
 @Entity
 @Table(name = "food")
 @Data
@@ -28,7 +30,7 @@ public class Food {
 
     @Size(min = 1, message = "Price must be at least 1.")
     @Column(name = "foodPrice")
-    Double foodPrice;
+    Long foodPrice;
 
     @Lob
     @Column(name = "foodImageURL")
@@ -44,6 +46,10 @@ public class Food {
     @Size(min = 10, message = "Recipe must be at least 10 characters.")
     @Column(name = "foodRecipe", nullable = false, columnDefinition = "nvarchar(512)")
     String foodRecipe;
+
+    @Size(min = 1, max = 100, message = "Sale percent must be in range 1 to 100")
+    @Column(name = "salePercent", nullable = false)
+    Short salePercent;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", referencedColumnName = "category_id")

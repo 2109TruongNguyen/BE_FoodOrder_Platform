@@ -31,4 +31,8 @@ public class Ingredient {
 
     @Column(name = "status", nullable = false)
     Boolean isEnable;
+
+    @Column(name = "ingredientQuantity", nullable = false)
+    @Size(min = 1, message = "Ingredient quantity must be at least 1.")
+    Integer ingredientQuantity;
 }

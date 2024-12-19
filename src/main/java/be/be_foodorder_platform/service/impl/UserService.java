@@ -1,4 +1,4 @@
-package be.be_foodorder_platform.service;
+package be.be_foodorder_platform.service.impl;
 
 import org.springframework.stereotype.Service;
 

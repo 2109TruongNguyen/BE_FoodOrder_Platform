@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -28,4 +30,5 @@ public class WeekMenu {
 
     @Column(name = "endDate", nullable = false, columnDefinition = "datetime")
     Date endDate;
+
 }
