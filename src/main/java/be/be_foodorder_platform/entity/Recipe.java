@@ -14,15 +14,16 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "recipe")
 public class Recipe {
-    @Column
-    Integer quantity;
+    @EmbeddedId
+    FoodIngredientID foodIngredientID;
+
+    @Column(name = "quantity", nullable = false)
+    Float quantity;
 
     @Column(columnDefinition = "nvarchar(50)", name = "measure", nullable = false)
     @Size(min = 3, message = "Measure must be at least 3 characters.")
     String measure;
 
-    @EmbeddedId
-    FoodIngredientID foodIngredientID;
     @ManyToOne(fetch = FetchType.EAGER)
     @MapsId("foodID")
     @JoinColumn(name = "food_id", referencedColumnName = "food_id")
