@@ -1,24 +1,20 @@
 package be.be_foodorder_platform.entity.embeddable;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.*;
-import lombok.experimental.FieldDefaults;
 
 import java.io.Serializable;
 
 @Embeddable
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
 public class PersonalId implements Serializable {
     @Column(name = "food_id")
-    Integer foodID;
+    Integer foodId;
 
-    @Column(name = "personalPlan_id")
-    Integer peronsalPlanID;
+    @Column(name = "personal_plan_id")
+    Integer personalPlanId;
 }

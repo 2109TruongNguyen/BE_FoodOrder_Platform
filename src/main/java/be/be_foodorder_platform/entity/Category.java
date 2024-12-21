@@ -25,5 +25,5 @@ public class Category {
     String categoryName;
 
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
-    Collection<Food> foods;
+    Collection<Food> food;
 }

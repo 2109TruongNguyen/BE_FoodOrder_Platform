@@ -16,8 +16,8 @@ import java.io.Serializable;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class FoodIngredientID implements Serializable {
     @Column(name = "food_id")
-    Integer foodID;
+    Integer foodId;
 
     @Column(name = "ingredient_id")
-    Integer ingredientID;
+    Integer ingredientId;
 }
