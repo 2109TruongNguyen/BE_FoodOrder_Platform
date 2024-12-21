@@ -19,18 +19,18 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
-    Integer orderID;
+    Integer orderId;
 
-    @Column(name = "customerName", nullable = false, columnDefinition = "nvarchar(50)")
+    @Column(name = "customer_name", nullable = false, columnDefinition = "nvarchar(50)")
     String customerName;
 
-    @Column(name = "totalPrice", nullable = false, columnDefinition = "decimal(10,2)")
+    @Column(name = "total_price", nullable = false, columnDefinition = "decimal(10,2)")
     Double totalPrice;
 
-    @Column(name = "phoneNumber", nullable = false, columnDefinition = "nvarchar(50)")
+    @Column(name = "phone_number", nullable = false, columnDefinition = "nvarchar(50)")
     String phoneNumber;
 
-    @Column(name = "orderDate", nullable = false, columnDefinition = "datetime")
+    @Column(name = "order_date", nullable = false, columnDefinition = "datetime")
     Date orderDate;
 
     @Column(name = "status", nullable = false, columnDefinition = "nvarchar(50)")
@@ -38,7 +38,7 @@ public class Order {
     StatusOrder status;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "addressOrder_id", referencedColumnName = "addressOrder_id")
+    @JoinColumn(name = "address_order_id", referencedColumnName = "address_order_id")
     AddressOrder addressOrder;
 
     @ManyToOne(cascade = CascadeType.ALL)

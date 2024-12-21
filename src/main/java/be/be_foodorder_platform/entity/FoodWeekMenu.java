@@ -11,18 +11,17 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "foodWeekMenu")
+@Table(name = "food_weekMenu")
 public class FoodWeekMenu {
+
     @EmbeddedId
     FoodWeekMenuID foodWeekMenuID;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @MapsId("foodID")
-    @JoinColumn(name = "food_id", referencedColumnName = "food_id")
-    Food food;
+    Food foods;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @MapsId("weekMenuID")
-    @JoinColumn(name = "weekMenu_id", referencedColumnName = "weekMenu_id")
-    WeekMenu weekMenu;
+    WeekMenu weekMenus;
 }

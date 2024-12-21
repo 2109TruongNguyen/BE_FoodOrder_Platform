@@ -15,7 +15,7 @@ import lombok.experimental.FieldDefaults;
 @Table(name = "recipe")
 public class Recipe {
     @EmbeddedId
-    FoodIngredientID foodIngredientID;
+    FoodIngredientID foodIngredientId;
 
     @Column(name = "quantity", nullable = false)
     Float quantity;
@@ -25,12 +25,12 @@ public class Recipe {
     String measure;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @MapsId("foodID")
+    @MapsId("foodId")
     @JoinColumn(name = "food_id", referencedColumnName = "food_id")
     Food food;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @MapsId("ingredientID")
+    @MapsId("ingredientId")
     @JoinColumn(name = "ingredient_id", referencedColumnName = "ingredient_id")
     Ingredient ingredient;
 }

@@ -20,10 +20,10 @@ public class Category {
     @Column(name = "category_id")
     Integer categoryID;
 
-    @Column(name = "categoryName", nullable = false, columnDefinition = "nvarchar(50)")
+    @Column(name = "category_name", nullable = false, columnDefinition = "nvarchar(50)")
     @Size(min = 3, message = "Category name must be at least 3 characters.")
     String categoryName;
 
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
-    Collection<Food> food;
+    Collection<Food> foods;
 }

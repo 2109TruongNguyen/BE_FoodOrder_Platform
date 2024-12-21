@@ -9,24 +9,24 @@ import lombok.experimental.FieldDefaults;
 
 @Entity
 @Data
-@Table(name = "personalWeek")
+@Table(name = "personal_week")
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class PersonalWeek {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "personalWeek_id")
-    Integer personalWeekID;
+    @Column(name = "personal_week_id")
+    Integer personalWeekId;
 
-    @Column(name = "weekIndex", nullable = false, columnDefinition = "int")
+    @Column(name = "week_index", nullable = false, columnDefinition = "int")
     Integer weekIndex;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "personalPlan_id", referencedColumnName = "personalPlan_id")
+    @JoinColumn(name = "personal_plan_id", referencedColumnName = "personal_plan_id")
     PersonalPlan personalPlan;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "weekMenu_id", referencedColumnName = "weekMenu_id")
+    @JoinColumn(name = "week_menu_id", referencedColumnName = "week_menu_id")
     WeekMenu weekMenu;
 }

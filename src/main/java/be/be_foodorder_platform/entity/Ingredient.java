@@ -16,23 +16,23 @@ public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ingredient_id")
-    Integer ingredientID;
+    Integer ingredientId;
 
-    @Column(name = "ingredientName", nullable = false, columnDefinition = "nvarchar(50)")
+    @Column(name = "ingredient_name", nullable = false, columnDefinition = "nvarchar(50)")
     @Size(min = 1, message = "Ingredient name must be at least 1 characters.")
     String ingredientName;
 
-    @Column(name = "ingredientPrice", nullable = false)
+    @Column(name = "ingredient_price", nullable = false)
     double ingredientPrice;
 
-    @Column(name = "ingredientMeasure", nullable = false, columnDefinition = "nvarchar(50)")
+    @Column(name = "ingredient_measure", nullable = false, columnDefinition = "nvarchar(50)")
     @Size(min = 1, message = "Ingredient measure must be at least 1 characters.")
     String ingredientMeasure;
 
     @Column(name = "status", nullable = false)
     Boolean isEnable;
 
-    @Column(name = "ingredientQuantity", nullable = false)
+    @Column(name = "ingredient_quantity", nullable = false)
     @Size(min = 1, message = "Ingredient quantity must be at least 1.")
     Integer ingredientQuantity;
 }

@@ -15,12 +15,12 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "item_id")
-    Integer itemID;
+    Integer itemId;
 
-    @Column(name = "itemQuantity")
+    @Column(name = "item_quantity")
     Integer itemQuantity;
 
-    @Column(name = "totalPrice")
+    @Column(name = "total_price")
     Double totalPrice;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

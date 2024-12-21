@@ -1,13 +1,13 @@
 package be.be_foodorder_platform.entity;
 
-import be.be_foodorder_platform.entity.embeddable.PersonaID;
+import be.be_foodorder_platform.entity.embeddable.PersonalId;
 import be.be_foodorder_platform.entity.enums.Meal;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Entity
-@Table(name = "personalFood")
+@Table(name = "personal_food")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,22 +15,22 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class PersonalFood {
     @EmbeddedId
-    PersonaID personalFoodID;
+    PersonalId personalFoodId;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @MapsId("foodID")
+    @MapsId("foodId")
     @JoinColumn(name = "food_id", referencedColumnName = "food_id")
     Food food;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @MapsId("personalPlanID")
-    @JoinColumn(name = "personalPlan_id", referencedColumnName = "personalPlan_id")
+    @MapsId("personalPlanId")
+    @JoinColumn(name = "personal_plan_id", referencedColumnName = "personal_plan_id")
     PersonalPlan personalPlan;
 
-    @Column(name = "weekDay", nullable = false, columnDefinition = "int")
+    @Column(name = "week_day", nullable = false, columnDefinition = "int")
     Integer weekDay;
 
-    @Column(name = "weekIndex", nullable = false, columnDefinition = "int")
+    @Column(name = "week_index", nullable = false, columnDefinition = "int")
     Integer weekIndex;
 
     @Column(name = "meal", nullable = false, columnDefinition = "nvarchar(50)")

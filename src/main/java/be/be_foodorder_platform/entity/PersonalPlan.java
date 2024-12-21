@@ -13,17 +13,17 @@ import java.util.Collection;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "personalPlan")
+@Table(name = "personal_plan")
 public class PersonalPlan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "personalPlan_id")
-    Integer peronsalPlanID;
+    @Column(name = "personal_plan_id")
+    Integer personalPlanId;
 
-    @Column(name = "weeklyNumber", nullable = false, columnDefinition = "int")
+    @Column(name = "weekly_number", nullable = false, columnDefinition = "int")
     Integer weeklyNumber;
 
-    @Column(name = "planName", nullable = false, columnDefinition = "nvarchar(50)")
+    @Column(name = "plan_name", nullable = false, columnDefinition = "nvarchar(50)")
     @Size(min = 1, message = "Plan name must be at least 1 characters.")
     String planName;
 

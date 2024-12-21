@@ -11,12 +11,12 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "addressAccount")
+@Table(name = "address_account")
 public class AddressAccount {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "address_id")
-    Long addressAccountID;
+    Long addressAccountId;
 
     @Column(name = "province", columnDefinition = "nvarchar(50)", nullable = false)
     @Size(min = 3, message = "Province must be at least 3 characters.")
@@ -30,7 +30,7 @@ public class AddressAccount {
     @Size(min = 3, message = "Ward must be at least 3 characters.")
     String ward;
 
-    @Column(name = "homeNumber", columnDefinition = "nvarchar(50)", nullable = false)
+    @Column(name = "home_number", columnDefinition = "nvarchar(50)", nullable = false)
     @Size(min = 3, message = "Home number must be at least 3 characters.")
     String homeNumber;
 

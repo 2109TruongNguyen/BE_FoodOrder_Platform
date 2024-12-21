@@ -19,7 +19,7 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "transaction_id")
-    Long transactionID;
+    Long transactionId;
 
     @Column(nullable = false, name = "trans_date")
     Date transDate;

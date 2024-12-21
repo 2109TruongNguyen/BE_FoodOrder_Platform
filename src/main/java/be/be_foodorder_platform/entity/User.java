@@ -6,8 +6,6 @@ import lombok.experimental.FieldDefaults;
 import jakarta.validation.constraints.Size;
 
 import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -20,7 +18,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    Long userID;
+    Long userId;
 
     @Column(name = "user_name", nullable = false, unique = true)
     @Size(min = 3, message = "Username must be at least 3 characters.")
@@ -33,7 +31,7 @@ public class User {
     @Column(name = "email", columnDefinition = "nvarchar(50)", unique = true, nullable = false)
     String email;
 
-    @Size(min = 10, message = "Password must be at least 10 characters.")
+    @Size(min = 10, message = "Phone number must be at least 10 characters.")
     @Column(name = "phone", nullable = false, columnDefinition = "varchar(15)", unique = true)
     String phone;
 
@@ -47,6 +45,9 @@ public class User {
 
     @Column(name = "status", nullable = false)
     Boolean isEnable;
+
+    @Column(name = "balance", nullable = false)
+    Long balance;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "address_id")

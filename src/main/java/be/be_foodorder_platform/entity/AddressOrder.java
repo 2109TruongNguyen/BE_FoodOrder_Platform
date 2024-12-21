@@ -6,16 +6,16 @@ import lombok.experimental.FieldDefaults;
 
 @Entity
 @Data
-@Table(name = "addressOrder")
+@Table(name = "address_order")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@FieldDefaults(level =  AccessLevel.PRIVATE)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class AddressOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "addressOrder_id")
-    Integer addressOrderID;
+    @Column(name = "address_order_id")
+    Integer addressOrderId;
 
     @Column(name = "province", columnDefinition = "nvarchar(50)", nullable = false)
     String province;
@@ -26,7 +26,7 @@ public class AddressOrder {
     @Column(name = "ward", columnDefinition = "nvarchar(50)", nullable = false)
     String ward;
 
-    @Column(name = "homeNumber", columnDefinition = "nvarchar(50)", nullable = false)
+    @Column(name = "home_number", columnDefinition = "nvarchar(50)", nullable = false)
     String homeNumber;
 
     @OneToOne(mappedBy = "addressOrder")
